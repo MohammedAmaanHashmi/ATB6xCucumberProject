@@ -1,6 +1,6 @@
 package com.thetestingacademy.base;
 
-import com.thetestingacademy.driver.DriverManager;
+import com.thetestingacademy.driver.DriverManagerTL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,29 +22,29 @@ public class CommonToAllPage {
 
     public void implicitWait() {
         //waits
-        DriverManager.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        DriverManagerTL.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
     //Common Functions
     public void clickElement(By by) {
-        DriverManager.getDriver().findElement(by).click();
+        DriverManagerTL.getDriver().findElement(by).click();
     }
 
     public WebElement presenceOfElement(By by) {
-        return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(by));
+        return new WebDriverWait(DriverManagerTL.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
     public WebElement visibilityOfElement(By by) {
-        return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(by));
+        return new WebDriverWait(DriverManagerTL.getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
     public void enterInput(By by, String text) {
-        DriverManager.getDriver().findElement(by).sendKeys(text);
+        DriverManagerTL.getDriver().findElement(by).sendKeys(text);
     }
 
     public WebElement getElement(By by) {
-        return DriverManager.getDriver().findElement(by);
+        return DriverManagerTL.getDriver().findElement(by);
     }
 
     //Common Assertion Code here

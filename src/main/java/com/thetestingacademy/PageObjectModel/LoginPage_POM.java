@@ -1,6 +1,7 @@
 package com.thetestingacademy.PageObjectModel;
 
 import com.thetestingacademy.base.CommonToAllPage;
+import com.thetestingacademy.driver.DriverManagerTL;
 import com.thetestingacademy.utils.PropertyReader;
 import org.openqa.selenium.By;
 
@@ -23,6 +24,10 @@ public class LoginPage_POM extends CommonToAllPage {
         //DriverManager.getDriver().findElement(Password).click();
         //Pass the control the DashboardPage
         return this;
+    }
+
+    public void openURl(String url) {
+        DriverManagerTL.getDriver().get(url);
     }
 
     public void loginToVwoNegative() throws Exception {
