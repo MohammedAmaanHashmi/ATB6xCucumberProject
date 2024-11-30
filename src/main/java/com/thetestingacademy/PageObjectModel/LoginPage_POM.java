@@ -30,15 +30,18 @@ public class LoginPage_POM extends CommonToAllPage {
         DriverManagerTL.getDriver().get(url);
     }
 
-    public void loginToVwoNegative() throws Exception {
-        enterInput(username, PropertyReader.readKey("username"));
+    public String loginToVwoNegative() throws Exception {
+        enterInput(username, "admin");
         enterInput(password, PropertyReader.readKey("password"));
         clickElement(signButton);
         //error String
+        visibilityOfElement(error_message);
+       return getElement(error_message).getText();
     }
 
     public DashboardPage_POM afterLogin() {
         return new DashboardPage_POM();
     }
+
 
 }
